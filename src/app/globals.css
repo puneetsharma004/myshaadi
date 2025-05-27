@@ -18,6 +18,18 @@
   font-family: var(--font-poppins);
 }
 
+.text-theme{
+  color: #52010b;
+}
+
+.bg-theme{
+  background-color: #52010b;
+}
+
+.text-offWhite{
+  color: #F8F0E3;
+}
+
 @media (prefers-color-scheme: dark) {
 
 }
