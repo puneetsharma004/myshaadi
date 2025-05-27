@@ -31,7 +31,7 @@ let whyData =[
 
 export default function WhyUs() {
 
-    let [isExpanded, setIsExpanded] = useState(false)
+   
 
   return (
     <>
@@ -47,19 +47,10 @@ export default function WhyUs() {
                 {/* here comes the cards for why us section */}
                 <div className='mt-[50px]'>
                     <div>
-                        <div className='flex gap-4'>
+                        <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 '>
                             {
-                                whyData.map((card, index)=>(
-                                    <div key={card.id} className='bg-white shadow-2xl rounded-2xl p-4 max-w-[350px] transition-all'>
-                                        <div>
-                                            <Image className='rounded-2xl' src={`/assets/${card.img}`} alt='Why Image' width={100} height={100}/>
-                                        </div>
-                                        <div>
-                                            <h2 className='text-theme text-[25px] font-bold'>{card.title}</h2>
-                                            <p className={`text-theme text-[16px] ${isExpanded?"":"line-clamp-3"}`}>{card.desc}</p>
-                                            <button className='text-offWhite bg-theme p-2 text-[14px] rounded-lg' onClick={()=>setIsExpanded(!isExpanded)}>Read More</button>
-                                        </div>
-                                    </div>
+                                whyData.map((card)=>(
+                                    <WhyCard key={card.id} card={card}/>
                                 ))
                             }
                         </div>
@@ -71,3 +62,22 @@ export default function WhyUs() {
     </>
   )
 }
+
+function WhyCard({card}){
+     let [isExpanded, setIsExpanded] = useState(false)
+    return(
+        <>
+            <div className='bg-white shadow-2xl flex flex-col justify-evenly rounded-2xl p-4 max-w-[350px] transition-all'>
+                <div className='my-2'>
+                    <Image className='rounded-2xl object-cover object-center' src={`/assets/${card.img}`} alt='Why Image' width={100} height={100}/>
+                </div>
+                <div className='space-y-2 '>
+                    <h2 className='text-theme text-[20px] lg:text-[25px] font-bold'>{card.title}</h2>
+                    <p className={`text-theme text-[14px] lg:text-[16px] ${isExpanded?"":"line-clamp-3"}`}>{card.desc}</p>
+                    <button className='text-offWhite bg-theme p-2 text-[12px] font-semibold lg:text-[14px] rounded-lg' onClick={()=>setIsExpanded(!isExpanded)}>Read More</button>
+                </div>
+            </div>
+        </>
+    )
+}
+
