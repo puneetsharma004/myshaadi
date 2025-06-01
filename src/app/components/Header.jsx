@@ -28,7 +28,7 @@ export default function Header() {
   return (
     <>
             {/* aafter md: */}
-        <header className={`lg:flex items-center justify-around p-2 hidden lg:text-[18px] fixed w-full text-white ${scrollState?'backdrop-blur-sm':'backdrop-blur-none'}`}>
+        <header className={`lg:flex items-center justify-around p-2 hidden lg:text-[18px] fixed w-full text-white ${scrollState?'backdrop-blur-sm':'backdrop-blur-none'} z-50`}>
             <div>
                 <Image src={"/assets/s01.png"} alt="Shaadi Logo" width={100} height={100}/>
             </div>

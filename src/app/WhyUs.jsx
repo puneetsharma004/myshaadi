@@ -2,6 +2,8 @@
 import Image from 'next/image'
 import React, { useState } from 'react'
 
+
+
 let whyData =[
     {
         id:1,
@@ -38,7 +40,7 @@ export default function WhyUs() {
         <div className='bg-[url(/assets/s02.jpg)] bg-center bg-cover h-screen'>
             <div className='bg-black/50 h-full flex flex-col gap-5 items-center justify-center text-white p-4'>
                 <div className='text-center'>
-                    <h1 className='text-2xl lg:text-5xl text-left lg:text-center font-bold font-playfair'>Why Choose Us?</h1>
+                    <h2 className='text-2xl lg:text-5xl text-left lg:text-center font-bold font-playfair'>Why Choose Us?</h2>
                     <p className='mt-4 text-left lg:text-center text-[16px] lg:text-base font-poppins'>
                     Discover the unique features that set us apart in the world of matchmaking.
                     </p>
@@ -65,7 +67,7 @@ export default function WhyUs() {
 
 function WhyCard({card}){
      let [isExpanded, setIsExpanded] = useState(false)
-    return(
+    return( 
         <>
             <div className='bg-white shadow-2xl flex flex-col justify-evenly rounded-2xl p-4 w-[250px] md:w-fit max-w-[350px] transition-all'>
                 <div className='my-2'>
