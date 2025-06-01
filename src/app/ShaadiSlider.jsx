@@ -59,9 +59,22 @@ export default function ShaadiSlider() {
       <h2 className='mx-auto text-center my-[30px] text-2xl lg:text-5xl font-bold font-playfair text-theme'>Featured Proflie</h2>
     
      <Swiper
-        slidesPerView={4}
         spaceBetween={30}
         loop={true}
+        breakpoints={{
+          640: {
+            slidesPerView: 1,
+            spaceBetween: 20,
+          },
+          768: {
+            slidesPerView: 2,
+            spaceBetween: 40,
+          },
+          1440: {
+            slidesPerView: 4,
+            spaceBetween: 40,
+          },
+        }}
         className="mySwiper w-[80%]"
       >
         {profile.map((item) => (

@@ -14,7 +14,7 @@ let profile = [
     {
         id: 1,
         img: "/assets/s11.jpg",
-        name: "Aript Sharma",
+        name: "​​KARTIKAYA & COMA TOZ",
         title: "Website Developer",
         exp: 20
     },
@@ -51,8 +51,22 @@ export default function Testimonials() {
   return (
     <>
         <div className='my-[80px]'>
+             <h2 className='mx-auto text-center my-[30px] text-2xl lg:text-5xl font-bold font-playfair text-theme'>Success Stories</h2>
             <Swiper
-        slidesPerView={4}
+        breakpoints={{
+          640: {
+            slidesPerView: 1,
+            spaceBetween: 20,
+          },
+          768: {
+            slidesPerView: 2,
+            spaceBetween: 40,
+          },
+          1440: {
+            slidesPerView: 4,
+            spaceBetween: 40,
+          },
+        }}
         spaceBetween={30}
         loop={true}
         className="mySwiper w-[80%]"
