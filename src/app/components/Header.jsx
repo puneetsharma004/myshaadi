@@ -1,18 +1,34 @@
 "use client"
 import Image from 'next/image'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import * as Icon from "@deemlol/next-icons";
 import { Sidebar } from './Sidebar';
 import { HomeIcon, InformationCircleIcon, UserGroupIcon, UserIcon, UserPlusIcon } from '@heroicons/react/24/solid';
 export default function Header() {
     let [show, setShow] = useState(false);
+    let [scrollState, setScrollState] = useState(false);
+    useEffect(() => {
+        const handleScroll = () => {
+            if (window.scrollY > 0) {
+            setScrollState(true);
+            } else {
+            setScrollState(false);
+            }
+        };
+
+        window.addEventListener("scroll", handleScroll);
+
+        // Cleanup the event when the component unmounts
+        return () => window.removeEventListener("scroll", handleScroll);
+        }, []);
+
     let showHide=()=>{
         setShow(!show);
     }
   return (
     <>
             {/* aafter md: */}
-        <header className='lg:flex items-center justify-around p-2 hidden lg:text-[18px] fixed w-full text-white'>
+        <header className={`lg:flex items-center justify-around p-2 hidden lg:text-[18px] fixed w-full text-white ${scrollState?'backdrop-blur-sm':'backdrop-blur-none'}`}>
             <div>
                 <Image src={"/assets/s01.png"} alt="Shaadi Logo" width={100} height={100}/>
             </div>
@@ -27,7 +43,7 @@ export default function Header() {
             </nav>
         </header>
             {/* mobli */}
-            <header className='lg:hidden items-center justify-between p-2  flex lg:text-[18px] fixed w-full text-white'>
+            <header className={`lg:hidden items-center justify-between p-2 flex lg:text-[18px] fixed w-full text-white transition-all ${scrollState?'backdrop-blur-sm':'backdrop-blur-none'}`}>
               <div>
                 <Image src={"/assets/s01.png"} alt="Shaadi Logo" width={100} height={100}/>
               </div>
@@ -35,9 +51,9 @@ export default function Header() {
                 <Icon.Menu size={36} onClick={showHide}/>
               </div>
             </header>
-                <div className={`fixed inset-0 transition-all duration-300 ${show ? 'bg-black/50' : 'bg-transparent pointer-events-none'}`}>
+                <div className={`fixed inset-0 transition-all duration-300 ${show ? 'bg-black/50 backdrop-blur-md ' : 'bg-transparent pointer-events-none'}`}>
                     <div
-                        className={`w-[80%] h-full flex flex-col justify-between bg-[#52010b] fixed top-0 right-0 p-4 transition-transform duration-300 ease-in-out ${
+                        className={`w-[80%] h-full flex flex-col justify-between bg-[#52010b] fixed top-0 right-0 px-4 py-2 transition-transform duration-300 ease-in-out ${
                         show ? 'translate-x-0' : 'translate-x-full'
                         }`}
                     >
@@ -47,18 +63,18 @@ export default function Header() {
 
                         {/* login greetings */}
                         <div>
-                            {/* <div className="flex items-center space-x-3 p-4">
+                            <div className="flex items-center space-x-3 p-4">
                                 <img src="/assets/me.png" className="w-10 h-10 rounded-full" />
                                 <div>
                                     <p className="text-white font-semibold">Hello, Puneet!</p>
                                     <p className="text-sm text-gray-300">View Profile</p>
                                 </div>
-                            </div> */}
+                            </div>
 
-                            <div className="text-center py-4 border-b border-white/20">
+                            {/* <div className="text-center py-4 border-b border-white/20">
                                 <p className="text-white text-sm">Welcome Guest</p>
                                 <p className="text-white text-xs">Sign up to get the best matches</p>
-                            </div>
+                            </div> */}
                         </div>
 
                         <div className='mt-4'>

@@ -47,7 +47,7 @@ export default function WhyUs() {
                 {/* here comes the cards for why us section */}
                 <div className='mt-[50px]'>
                     <div>
-                        <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 '>
+                        <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 '>
                             {
                                 whyData.map((card)=>(
                                     <WhyCard key={card.id} card={card}/>
@@ -67,7 +67,7 @@ function WhyCard({card}){
      let [isExpanded, setIsExpanded] = useState(false)
     return(
         <>
-            <div className='bg-white shadow-2xl flex flex-col justify-evenly rounded-2xl p-4 max-w-[350px] transition-all'>
+            <div className='bg-white shadow-2xl flex flex-col justify-evenly rounded-2xl p-4 w-[250px] md:w-fit max-w-[350px] transition-all'>
                 <div className='my-2'>
                     <Image className='rounded-2xl object-cover object-center' src={`/assets/${card.img}`} alt='Why Image' width={100} height={100}/>
                 </div>
