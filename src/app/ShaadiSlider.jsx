@@ -10,7 +10,7 @@ import 'swiper/css';
 import { Pagination } from 'swiper/modules';
 import Image from 'next/image';
 
-import { HomeIcon, InformationCircleIcon, UserGroupIcon, UserIcon, UserPlusIcon } from '@heroicons/react/24/solid';
+import { HomeIcon, InformationCircleIcon, UserGroupIcon, UserIcon, UserPlusIcon, ChatBubbleLeftRight } from '@heroicons/react/24/solid';
 
 let profile = [
     {
@@ -95,6 +95,7 @@ export default function ShaadiSlider() {
       </Swiper>
         {/* how it works */}
       <div className='bg-theme text-white py-[80px] mt-[30px]'>
+        <h2 className='mx-auto text-center mb-[50px] text-2xl lg:text-3xl font-bold font-playfair text-white'>How It Works</h2>
         <div className='mx-auto grid grid-cols-1 gap-4 md:grid-cols-3'>
           <div className='flex flex-col justify-center items-center '>
             <div className='flex justify-center items-center bg-white'>
@@ -107,15 +108,15 @@ export default function ShaadiSlider() {
             <div className='flex justify-center items-center bg-white'>
               <UserPlusIcon className="size-8 bg-theme"/>
             </div>
-            <h3 className='font-bold font-playfair'>Create Profile</h3>
-            <p className='text-center'>Sign up and create your <br/> detailed profile</p>
+            <h3 className='font-bold font-playfair'>Find Matches</h3>
+            <p className='text-center'>Browse profiles and <br/> find your perfect match</p>
           </div>
           <div className='flex flex-col justify-center items-center mt-4'>
             <div className='flex justify-center items-center bg-white'>
-              <UserPlusIcon className="size-8 bg-theme"/>
+              <ChatBubbleLeftRight className="size-8 bg-theme"/>
             </div>
-            <h3 className='font-bold font-playfair'>Create Profile</h3>
-            <p className='text-center'>Sign up and create your <br/> detailed profile</p>
+            <h3 className='font-bold font-playfair'>Connect</h3>
+            <p className='text-center'>Start conversation and <br/> meet in person</p>
           </div>
         </div>
       </div>
