@@ -4,7 +4,7 @@ import React from 'react'
 export default function Hero() {
   return (
     <>
-        <div className='bg-[url(/assets/s02.jpg)] bg-center bg-cover h-screen'>
+        <div className='bg-[url(/assets/s02.jpg)] bg-center bg-cover h-screen overflow-hidden'>
             <div className='bg-black/50 h-full flex items-center justify-center text-white p-4'>
                 <div className=''>
                     <h1 className='text-2xl lg:text-5xl font-bold font-playfair'>Find Your Perfect <br className='block lg:hidden' /> Match With Confidence</h1>

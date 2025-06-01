@@ -4,6 +4,8 @@ import React, { useEffect, useState } from 'react'
 import * as Icon from "@deemlol/next-icons";
 import { Sidebar } from './Sidebar';
 import { HomeIcon, InformationCircleIcon, UserGroupIcon, UserIcon, UserPlusIcon } from '@heroicons/react/24/solid';
+import Link from 'next/link';
+import AboutUs from '../about-us/page';
 export default function Header() {
     let [show, setShow] = useState(false);
     let [scrollState, setScrollState] = useState(false);
@@ -80,11 +82,11 @@ export default function Header() {
                         <div className='mt-4'>
                             <nav>
                                 <ul className='flex flex-col gap-6 px-5 text-white font-poppins-200'> 
-                                    <li className='cursor-pointer'><span className='flex gap-2 items-center'><HomeIcon className="size-4"/> Home</span></li>
-                                    <li className='cursor-pointer'><span className='flex gap-2 items-center'><InformationCircleIcon className="size-4"/> About Us</span></li>
-                                    <li className='cursor-pointer'><span className='flex gap-2 items-center'><UserGroupIcon className="size-4"/> Membership</span></li>
-                                    <li className='cursor-pointer'><span className='flex gap-2 items-center'><UserPlusIcon className="size-4"/> Sign Up</span></li>
-                                    <li className='cursor-pointer'><span className='flex gap-2 items-center'><UserIcon className="size-4"/> Sign In</span></li>
+                                    <Link href={'/'} className='cursor-pointer'><span className='flex gap-2 items-center'><HomeIcon className="size-4"/> Home</span></Link>
+                                    <Link href={'/about-us'} className='cursor-pointer'><span className='flex gap-2 items-center'><InformationCircleIcon className="size-4"/> About Us</span></Link>
+                                    <Link href={'/members'} className='cursor-pointer'><span className='flex gap-2 items-center'><UserGroupIcon className="size-4"/> Membership</span></Link>
+                                    <Link href={'/'} className='cursor-pointer'><span className='flex gap-2 items-center'><UserPlusIcon className="size-4"/> Sign Up</span></Link>
+                                    <Link href={'/'} className='cursor-pointer'><span className='flex gap-2 items-center'><UserIcon className="size-4"/> Sign In</span></Link>
                                 </ul>
                             </nav>
                         </div>

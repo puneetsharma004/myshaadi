@@ -37,8 +37,8 @@ export default function WhyUs() {
 
   return (
     <>
-        <div className='bg-[url(/assets/s02.jpg)] bg-center bg-cover h-screen'>
-            <div className='bg-black/50 h-full flex flex-col gap-5 items-center justify-center text-white p-4'>
+        <div className='bg-[url(/assets/s02.jpg)] bg-center bg-cover overflow-hidden'>
+            <div className='bg-black/50 h-full flex flex-col gap-5 items-center justify-center text-white p-4 py-[50px]'>
                 <div className='text-center'>
                     <h2 className='text-2xl lg:text-5xl text-left lg:text-center font-bold font-playfair'>Why Choose Us?</h2>
                     <p className='mt-4 text-left lg:text-center text-[16px] lg:text-base font-poppins'>
@@ -49,7 +49,7 @@ export default function WhyUs() {
                 {/* here comes the cards for why us section */}
                 <div className='mt-[50px]'>
                     <div>
-                        <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 '>
+                        <div className='grid grid-cols-2 lg:grid-cols-4 gap-4 '>
                             {
                                 whyData.map((card)=>(
                                     <WhyCard key={card.id} card={card}/>
@@ -69,7 +69,7 @@ function WhyCard({card}){
      let [isExpanded, setIsExpanded] = useState(false)
     return( 
         <>
-            <div className='bg-white shadow-2xl flex flex-col justify-evenly rounded-2xl p-4 w-[250px] md:w-fit max-w-[350px] transition-all'>
+            <div className='bg-white shadow-2xl flex flex-col justify-evenly rounded-2xl p-4 w-[200px] md:w-fit max-w-[350px] transition-all'>
                 <div className='my-2'>
                     <Image className='rounded-2xl object-cover object-center' src={`/assets/${card.img}`} alt='Why Image' width={100} height={100}/>
                 </div>
