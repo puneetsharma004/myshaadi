@@ -45,7 +45,7 @@ export default function Header() {
             </nav>
         </header>
             {/* mobli */}
-            <header className={`lg:hidden items-center justify-between p-2 flex lg:text-[18px] fixed w-full text-white transition-all ${scrollState?'backdrop-blur-sm':'backdrop-blur-none'}`}>
+            <header className={`lg:hidden items-center z-50 justify-between p-2 flex lg:text-[18px] fixed w-full text-white transition-all ${scrollState?'backdrop-blur-sm':'backdrop-blur-none'}`}>
               <div>
                 <Image src={"/assets/s01.png"} alt="Shaadi Logo" width={100} height={100}/>
               </div>

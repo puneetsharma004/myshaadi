@@ -14,7 +14,7 @@ let profile = [
     {
         id: 1,
         img: "/assets/s11.jpg",
-        name: "​​KARTIKAYA & COMA TOZ",
+        name: "​​KARTIk & KAYA",
         title: "Website Developer",
         exp: 20
     },

@@ -69,7 +69,7 @@ function WhyCard({card}){
      let [isExpanded, setIsExpanded] = useState(false)
     return( 
         <>
-            <div className='bg-white shadow-2xl flex flex-col justify-evenly rounded-2xl p-4 w-[200px] md:w-fit max-w-[350px] transition-all'>
+            <div className='bg-white shadow-2xl flex flex-col justify-evenly rounded-2xl p-4 w-[180px] md:w-fit max-w-[350px] transition-all'>
                 <div className='my-2'>
                     <Image className='rounded-2xl object-cover object-center' src={`/assets/${card.img}`} alt='Why Image' width={100} height={100}/>
                 </div>

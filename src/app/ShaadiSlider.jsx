@@ -95,27 +95,27 @@ export default function ShaadiSlider() {
       </Swiper>
         {/* how it works */}
       <div className='bg-theme text-white py-[80px] mt-[30px]'>
-        <div className='mx-auto grid grid-cols-3'>
-          <div className='flex flex-col justify-center items-center'>
+        <div className='mx-auto grid grid-cols-1 gap-4 md:grid-cols-3'>
+          <div className='flex flex-col justify-center items-center '>
             <div className='flex justify-center items-center bg-white'>
               <UserPlusIcon className="size-8 bg-theme"/>
             </div>
-            <h3>Create Profile</h3>
-            <p>Sign up and create your detailed profile</p>
+            <h3 className='font-bold font-playfair'>Create Profile</h3>
+            <p className='text-center'>Sign up and create your <br/> detailed profile</p>
           </div>
-          <div className='flex flex-col justify-center items-center'>
+          <div className='flex flex-col justify-center items-center mt-4 '>
             <div className='flex justify-center items-center bg-white'>
               <UserPlusIcon className="size-8 bg-theme"/>
             </div>
-            <h3>Create Profile</h3>
-            <p>Sign up and create your detailed profile</p>
+            <h3 className='font-bold font-playfair'>Create Profile</h3>
+            <p className='text-center'>Sign up and create your <br/> detailed profile</p>
           </div>
-          <div className='flex flex-col justify-center items-center'>
+          <div className='flex flex-col justify-center items-center mt-4'>
             <div className='flex justify-center items-center bg-white'>
               <UserPlusIcon className="size-8 bg-theme"/>
             </div>
-            <h3>Create Profile</h3>
-            <p>Sign up and create your detailed profile</p>
+            <h3 className='font-bold font-playfair'>Create Profile</h3>
+            <p className='text-center'>Sign up and create your <br/> detailed profile</p>
           </div>
         </div>
       </div>
