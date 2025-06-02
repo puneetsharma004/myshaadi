@@ -10,7 +10,7 @@ import 'swiper/css';
 import { Pagination } from 'swiper/modules';
 import Image from 'next/image';
 
-import { HomeIcon, InformationCircleIcon, UserGroupIcon, UserIcon, UserPlusIcon, ChatBubbleLeftRight } from '@heroicons/react/24/solid';
+import { UserPlusIcon, ChatBubbleLeftRight } from '@heroicons/react/24/solid';
 
 let profile = [
     {
@@ -113,7 +113,7 @@ export default function ShaadiSlider() {
           </div>
           <div className='flex flex-col justify-center items-center mt-4'>
             <div className='flex justify-center items-center bg-white'>
-              <ChatBubbleLeftRight className="size-8 bg-theme"/>
+              {/* <ChatBubbleLeftRight className="size-8 bg-theme"/> */}
             </div>
             <h3 className='font-bold font-playfair'>Connect</h3>
             <p className='text-center'>Start conversation and <br/> meet in person</p>

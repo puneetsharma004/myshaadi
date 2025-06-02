@@ -32,22 +32,22 @@ export default function Header() {
             {/* aafter md: */}
         <header className={`lg:flex items-center justify-around p-2 hidden lg:text-[18px] fixed w-full text-white ${scrollState?'backdrop-blur-sm':'backdrop-blur-none'} z-50`}>
             <div>
-                <Image src={"/assets/s01.png"} alt="Shaadi Logo" width={100} height={100}/>
+                <Image src={"/assets/s01.png"} alt="Shaadi Logo" width={70} height={100}/>
             </div>
             <nav>
                 <ul className='flex gap-4 font-poppins-200'> 
-                    <li className='cursor-pointer'><span>Home</span></li>
-                    <li className='cursor-pointer'><span>About Us</span></li>
-                    <li className='cursor-pointer'><span>Membership</span></li>
-                    <li className='cursor-pointer'><span>Sign Up</span></li>
-                    <li className='cursor-pointer'><span>Sign In</span></li>
+                    <Link href={'/'} className='cursor-pointer'><span>Home</span></Link>
+                    <Link href={'/about-us'} className='cursor-pointer'><span>About Us</span></Link>
+                    <Link href={'/members'} className='cursor-pointer'><span>Membership</span></Link>
+                    <Link href={'/'} className='cursor-pointer'><span>Sign Up</span></Link>
+                    <Link href={'/'} className='cursor-pointer'><span>Sign In</span></Link>
                 </ul>
             </nav>
         </header>
             {/* mobli */}
             <header className={`lg:hidden items-center z-50 justify-between p-2 flex lg:text-[18px] fixed w-full text-white transition-all ${scrollState?'backdrop-blur-sm':'backdrop-blur-none'}`}>
               <div>
-                <Image src={"/assets/s01.png"} alt="Shaadi Logo" width={100} height={100}/>
+                <Image src={"/assets/s01.png"} alt="Shaadi Logo" width={50} height={100}/>
               </div>
               <div>
                 <Icon.Menu size={36} onClick={showHide}/>

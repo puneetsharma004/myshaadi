@@ -3,6 +3,7 @@ import "./globals.css";
 import Header from "./components/Header";
 
 import { Playfair_Display, Poppins } from 'next/font/google'
+import { Footer } from "./components/Footer";
 
 const playfair = Playfair_Display({
   subsets: ['latin'],
@@ -30,6 +31,7 @@ export default function RootLayout({ children }) {
       >
         <Header/>
         {children}
+        <Footer/>
       </body>
     </html>
   );
