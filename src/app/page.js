@@ -11,7 +11,6 @@ export default function Home() {
    <WhyUs/>
    <ShaadiSlider/>
    <Testimonials/>
-   <Footer/>
    </>
   );
 }
