@@ -53,7 +53,9 @@ export default function Header() {
                 <Icon.Menu size={36} onClick={showHide}/>
               </div>
             </header>
-                <div className={`fixed inset-0 transition-all duration-300 ${show ? 'bg-black/50 backdrop-blur-md ' : 'bg-transparent pointer-events-none'}`}>
+
+            {/* sidebar */}
+                <div className={`fixed inset-0 z-[100] transition-all duration-300 ${show ? 'bg-black/50 backdrop-blur-md ' : 'bg-transparent pointer-events-none'}`}>
                     <div
                         className={`w-[80%] h-full flex flex-col justify-between bg-[#52010b] fixed top-0 right-0 px-4 py-2 transition-transform duration-300 ease-in-out ${
                         show ? 'translate-x-0' : 'translate-x-full'
