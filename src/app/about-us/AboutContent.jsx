@@ -1,5 +1,6 @@
 "use client"
-import React, { useState } from "react";
+import Image from "next/image";
+import React, { useEffect, useRef, useState } from "react";
 
 const sections = [
   {
@@ -42,31 +43,50 @@ export default function AboutContent() {
         setRead(!read)
         console.log("clicked btn read more")
     }
+    const [expandedSections, setExpandedSections] = useState({});
+    const toggleSection = (index) => {
+    setExpandedSections(prev => ({
+      ...prev,
+      [index]: !prev[index]
+    }));
+  };
+    const contentRefs = useRef([]);
+    // Initialize refs array
+    useEffect(() => {
+      contentRefs.current = contentRefs.current.slice(0, sections.length);
+    }, [sections]);
   return (
     <section className="py-16 px-4 lg:px-8 bg-white">
       <div className="max-w-6xl mx-auto space-y-16">
         {sections.map(({ title, content, image, reverse }, index) => (
           <div
             key={index}
-            className={`flex flex-col lg:flex-row ${
+            className={`flex flex-col lg:flex-row ${index==2?"":"mb-[140px]"} ${
               reverse ? "lg:flex-row-reverse" : ""
             } gap-8 items-center`}
           >
             {/* Text */}
             <div className="flex-1 bg-gradient-to-br from-rose-50 to-white p-6 rounded-2xl shadow-xl">
               <h2 className="text-2xl font-bold text-rose-600 mb-4">{title}</h2> 
-              <p className={`text-gray-700 whitespace-pre-line text-sm leading-relaxed ${read?" ":"line-clamp-[10]"}`}>
+              <p ref={el => contentRefs.current[index] = el} className={`text-gray-700 whitespace-pre-line text-sm leading-relaxed overflow-hidden transition-all duration-500 ease-in-out ${read?" ":"line-clamp-[10]"}`} style={{
+                    maxHeight: expandedSections[index] 
+                      ? `${contentRefs.current[index]?.scrollHeight}px` 
+                      : '10rem'
+                  }}
+                >
                 {content}
               </p>
-              <button className="bg-rose-600 text-white p-2 text-[16px] rounded-2xl mt-4 cursor-pointer" onClick={readHandler}>Read More</button>
+              <button className="bg-rose-600 text-white p-2 text-[16px] rounded-2xl mt-4 cursor-pointer" onClick={() => toggleSection(index)}>{expandedSections[index] ? 'Read Less' : 'Read More'}</button>
             </div>
 
             {/* Image */}
             <div className="flex-1 ">
-              <img
+              <Image
                 src={image}
                 alt={title}
-                className="rounded-2xl w-full h-auto shadow-lg"
+                width={600}
+                height={500}
+                className="rounded-2xl w-full object-cover shadow-lg h-[480px]"
               />
             </div>
           </div>

@@ -125,10 +125,10 @@ export default function Membership() {
 
 
 
- <div className="min-h-screen bg-gradient-to-br from-blue-900 via-purple-900 to-indigo-900 py-16 px-4 sm:px-6">
-      <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-16">
-          <h1 className="text-4xl md:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 via-orange-500 to-red-500 mb-4">
+<div className="min-h-screen bg-gradient-to-br from-[#52010b] via-[#7a1c20] to-[#a8323a] py-16 px-4 sm:px-6">
+  <div className="max-w-6xl mx-auto">
+    <div className="text-center my-16">
+      <h1 className="text-4xl md:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#f7c1ad] via-[#f59c8d] to-[#f27472] mb-4">
             Oregon Adventure Membership
           </h1>
           <p className="text-xl text-blue-100 max-w-2xl mx-auto">

@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import React from 'react'
 
 export const Footer = () => {
@@ -56,46 +57,40 @@ export const Footer = () => {
               <p className="font-semibold tracking-wide text-teal-accent-400">
                 Company
               </p>
-              <ul className="mt-2 space-y-2">
-                <li>
-                  <a
-                    href="/"
+              <ul className="mt-2 space-y-2 grid grid-cols-1">
+                <Link href={"/"}
                     className="transition-colors duration-300 text-deep-purple-50 hover:text-teal-accent-400"
+                  >
+                    Home
+            
+                </Link>
+                <Link href="/about-us" className="transition-colors duration-300 text-deep-purple-50 hover:text-teal-accent-400"
                   >
                     About Us
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="/"
-                    className="transition-colors duration-300 text-deep-purple-50 hover:text-teal-accent-400"
+            
+                </Link>
+                <Link href="/members" className="transition-colors duration-300 text-deep-purple-50 hover:text-teal-accent-400"
                   >
                     Membership
-                  </a>
-                </li>
+           
+                </Link>
               </ul>
             </div>
             <div>
               <p className="font-semibold tracking-wide text-teal-accent-400">
                 Features
               </p>
-              <ul className="mt-2 space-y-2">
-                <li>
-                  <a
-                    href="/"
-                    className="transition-colors duration-300 text-deep-purple-50 hover:text-teal-accent-400"
+              <ul className="mt-2 space-y-2 grid grid-cols-1">
+                <Link href="/signin" className="transition-colors duration-300 text-deep-purple-50 hover:text-teal-accent-400"
                   >
                     Sign In
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="/"
-                    className="transition-colors duration-300 text-deep-purple-50 hover:text-teal-accent-400"
+               
+                </Link>
+                <Link href="/signup" className="transition-colors duration-300 text-deep-purple-50 hover:text-teal-accent-400"
                   >
                    Sign Up
-                  </a>
-                </li>
+            
+                </Link>
               </ul>
             </div>
           </div>

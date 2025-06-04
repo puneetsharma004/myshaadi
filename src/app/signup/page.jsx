@@ -6,10 +6,15 @@ export default function SignUpIn() {
     <>
         <div className=' bg-theme py-10 h-screen flex items-center'>
           <div className=' w-[70%] bg-white flex items-center justify-evenly gap-6 mx-auto mt-10 rounded-2xl py-10'>
-            <div>
-              <Image src="/assets/signin.jpg" alt="Shaadi Logo" width={500} height={100} className='mx-auto mb-6 w-[450px] rounded' />
+            <div className='mx-auto w-[450px]'>
+              <h2 className="text-3xl text-theme font-playfair font-semibold mb-2 text-center">Begin Your Forever</h2>
+              <p className="text-gray-600 text-[14px] text-center mt-[30px]">
+              Join us in celebrating love — create your wedding profile and take the first step toward your happily ever after.
+              </p>
+
+              <Image src="/assets/signup.jpg" alt="Shaadi Logo" width={500} height={100} className='mx-auto mb-6 w-[450px] rounded' />
             </div>
-            <form class="w-full max-w-lg bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+            <form class="w-full max-w-lg bg-white rounded px-8 pt-6 pb-8 mb-4">
               <div class="flex flex-wrap -mx-3 mb-6">
                 <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
                   <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-first-name">

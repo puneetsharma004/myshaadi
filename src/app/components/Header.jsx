@@ -39,8 +39,8 @@ export default function Header() {
                     <Link href={'/'} className='cursor-pointer'><span>Home</span></Link>
                     <Link href={'/about-us'} className='cursor-pointer'><span>About Us</span></Link>
                     <Link href={'/members'} className='cursor-pointer'><span>Membership</span></Link>
-                    <Link href={'/sign'} className='cursor-pointer'><span>Sign Up</span></Link>
-                    <Link href={'/sign'} className='cursor-pointer'><span>Sign In</span></Link>
+                    <Link href={'/signup'} className='cursor-pointer'><span>Sign Up</span></Link>
+                    <Link href={'/signin'} className='cursor-pointer'><span>Sign In</span></Link>
                 </ul>
             </nav>
         </header>
