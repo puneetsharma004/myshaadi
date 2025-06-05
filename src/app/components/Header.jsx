@@ -2,10 +2,12 @@
 import Image from 'next/image'
 import React, { useEffect, useState } from 'react'
 import * as Icon from "@deemlol/next-icons";
-import { Sidebar } from './Sidebar';
+
 import { HomeIcon, InformationCircleIcon, UserGroupIcon, UserIcon, UserPlusIcon } from '@heroicons/react/24/solid';
 import Link from 'next/link';
-import AboutUs from '../about-us/page';
+
+import { usePathname } from 'next/navigation'; // ✅ App Router-compatible
+
 export default function Header() {
     let [show, setShow] = useState(false);
     let [scrollState, setScrollState] = useState(false);
@@ -27,7 +29,14 @@ export default function Header() {
     let showHide=()=>{
         setShow(!show);
     }
-  return (
+     const pathname = usePathname();
+
+  // Close sidebar when route changes
+  useEffect(() => {
+    setShow(false); // auto-hide sidebar on route change
+  }, [pathname]);
+
+    return (
     <>
             {/* aafter md: */}
         <header className={`lg:flex items-center justify-around p-2 hidden lg:text-[18px] fixed w-full text-white ${scrollState?'backdrop-blur-sm':'backdrop-blur-none'} z-50`}>
@@ -87,8 +96,8 @@ export default function Header() {
                                     <Link href={'/'} className='cursor-pointer'><span className='flex gap-2 items-center'><HomeIcon className="size-4"/> Home</span></Link>
                                     <Link href={'/about-us'} className='cursor-pointer'><span className='flex gap-2 items-center'><InformationCircleIcon className="size-4"/> About Us</span></Link>
                                     <Link href={'/members'} className='cursor-pointer'><span className='flex gap-2 items-center'><UserGroupIcon className="size-4"/> Membership</span></Link>
-                                    <Link href={'/'} className='cursor-pointer'><span className='flex gap-2 items-center'><UserPlusIcon className="size-4"/> Sign Up</span></Link>
-                                    <Link href={'/'} className='cursor-pointer'><span className='flex gap-2 items-center'><UserIcon className="size-4"/> Sign In</span></Link>
+                                    <Link href={'/signup'} className='cursor-pointer'><span className='flex gap-2 items-center'><UserPlusIcon className="size-4"/> Sign Up</span></Link>
+                                    <Link href={'/signin'} className='cursor-pointer'><span className='flex gap-2 items-center'><UserIcon className="size-4"/> Sign In</span></Link>
                                 </ul>
                             </nav>
                         </div>

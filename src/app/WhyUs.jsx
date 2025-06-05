@@ -37,7 +37,7 @@ export default function WhyUs() {
 
   return (
     <>
-        <div className='bg-[url(/assets/s02.jpg)] bg-center bg-cover overflow-hidden'>
+        <div className='bg-[url(/assets/s02.jpg)] bg-center bg-cover overflow-hidden lg:h-screen'>
             <div className='bg-black/50 h-full flex flex-col gap-5 items-center justify-center text-white p-4 py-[50px]'>
                 <div className='text-center'>
                     <h2 className='text-2xl lg:text-5xl text-left lg:text-center font-bold font-playfair'>Why Choose Us?</h2>
