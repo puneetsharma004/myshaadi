@@ -2,6 +2,7 @@
 import { useFormik } from 'formik'
 import Image from 'next/image'
 import React from 'react'
+import *as Yup from 'yup'
 
 export default function SignUpIn() {
   let formik  = useFormik({
@@ -10,6 +11,10 @@ export default function SignUpIn() {
       password:"",
       remenberMe:""
     },
+    validationSchema: Yup.object({
+      email: Yup.string().email('Invalid email').required('Email is required'),
+      password: Yup.string().required('Password required'),
+    }),
     onSubmit:()=>{console.log(formik.values)}
   })
 
@@ -50,6 +55,9 @@ export default function SignUpIn() {
                     onChange={(e)=>{formik.setFieldValue("email",e.target.value)}}
                   />
                 </div>
+                {formik.touched.email && formik.errors.email && (
+        <p className="text-red-500 text-xs italic px-3">{formik.errors.email}</p>
+      )}
               </div>
 
               <div className="flex flex-wrap -mx-3 mb-4 sm:mb-6">
@@ -64,13 +72,20 @@ export default function SignUpIn() {
                     placeholder="******************"
                     onChange={(e)=>{formik.setFieldValue("password", e.target.value)}}
                   />
-                  <p className="text-xs text-red-600 cursor-pointer hover:text-red-700">Forget password</p>
                 </div>
+                {formik.touched.password && formik.errors.password && (
+        <p className="text-red-500 text-xs italic px-3">{formik.errors.password}</p>
+      )}
               </div>
+                  
 
-              <div className='flex gap-2 text-[13px] sm:text-[14px]'>
-                <input type='checkbox' className='cursor-pointer' id="remember" onChange={(e)=>{formik.setFieldValue("remenberMe", e.target.checked)}}/>
+              <div className='flex gap-2 text-[13px] sm:text-[14px] justify-between items-center'>
+                <div className='flex gap-2 items-center'>
+                  <input type='checkbox' className='cursor-pointer' id="remember" onChange={(e)=>{formik.setFieldValue("remenberMe", e.target.checked)}}/>
                 <label htmlFor="remember">Remember Me</label>
+                </div>
+
+                <p className="text-xs text-red-600 cursor-pointer hover:text-red-700">Forget password</p>
               </div>
 
               <div className='flex justify-center items-center mt-4 sm:mt-6'>
